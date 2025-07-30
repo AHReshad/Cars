@@ -17,10 +17,11 @@ export default function Nav() {
 
           {/* Navigation Menu */}
           <ul className="flex items-center gap-6 text-sm font-medium">
-            <li className="cursor-pointer hover:text-blue-600">Home</li>
-            <Link to="/about" className="cursor-pointer hover:text-blue-600">About Us</Link>
-            <li className="cursor-pointer hover:text-blue-600">Services</li>
-            <li className="cursor-pointer hover:text-blue-600">Contact Us</li>
+              <Link to="/" className="cursor-pointer hover:text-blue-600">Home</Link>
+              <Link to="/about" className="cursor-pointer hover:text-blue-600">About Us</Link>
+              <Link to="/services" className="cursor-pointer hover:text-blue-600">Services</Link>
+              <Link to="/contact" className="cursor-pointer hover:text-blue-600">contact</Link>
+
 
             {/* Icons */}
             <li>
