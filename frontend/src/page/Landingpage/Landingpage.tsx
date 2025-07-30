@@ -3,6 +3,7 @@ import { Search } from "lucide-react";
 import car1 from "../../../public/images/landing/car1.svg";
 import car2 from "../../../public/images/landing/car2.svg";
 import car3 from "../../../public/images/landing/car3.svg";
+import Nav from "../../Components/Nav";
 
 export default function Landingpage() {
   const cars = [
@@ -30,6 +31,7 @@ export default function Landingpage() {
   ];
   return (
     <div className="px-[176px]">
+      <Nav/>
       {/* Hero Section */}
       <div className="relative w-full flex justify-center pb-14 mt-[36px] ">
         {/* Image */}
