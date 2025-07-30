@@ -1,4 +1,4 @@
-import apartman  from '../../../public/images/aboutpage/the.png'
+import apartman  from '/images/aboutpage/the.png'
 const SecondSection = () => {
     return (
 

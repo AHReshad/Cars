@@ -1,5 +1,5 @@
 import Nav from '../../Components/Nav';
-import Footer from '../../Components/footer';
+import Footer from '../../Components/Footer';
 import Contactus from './contactus';
 import FirstSection from './first-section';
 import SecondSection from './second-section';

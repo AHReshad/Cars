@@ -1,7 +1,7 @@
-import firstm from '../../../public/images/aboutpage/firstperson.png'
-import secondtm from '../../../public/images/aboutpage/secondperson.png'
-import thirdtm from '../../../public/images/aboutpage/thirdperson.png'
-import fourthtm from '../../../public/images/aboutpage/fourperson.png'
+import firstm from '/images/aboutpage/firstperson.png'
+import secondtm from '/images/aboutpage/secondperson.png'
+import thirdtm from '/images/aboutpage/thirdperson.png'
+import fourthtm from '/images/aboutpage/fourperson.png'
 
 
 

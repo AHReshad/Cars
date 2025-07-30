@@ -1,4 +1,4 @@
-import car from '../../../public/images/aboutpage/thecar.png'
+import car from '/images/aboutpage/thecar.png'
 
 const FirstSection = () => {
     return (
