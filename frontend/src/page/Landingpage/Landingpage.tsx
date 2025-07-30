@@ -1,8 +1,8 @@
-import React from "react";
+
 import { Search } from "lucide-react";
-import car1 from "../../../public/images/landing/car1.svg";
-import car2 from "../../../public/images/landing/car2.svg";
-import car3 from "../../../public/images/landing/car3.svg";
+import car1 from "/images/landing/car1.svg";
+import car2 from "/images/landing/car2.svg";
+import car3 from "/images/landing/car3.svg";
 import Nav from "../../Components/Nav";
 
 export default function Landingpage() {
