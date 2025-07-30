@@ -37,7 +37,7 @@ export default function Fourthsection() {
         <div key={member.id} className="border p-4 rounded shadow">
           <img src={member.image} alt={member.name} className="w-full h-48 object-cover rounded" />
           <h2 className="text-xl font-bold mt-2">{member.name}</h2>
-          <p className="text-gray-600">{member.job}</p>
+          <p className="text-[#99734D]">{member.job}</p>
         </div>
       ))}
     </div>
