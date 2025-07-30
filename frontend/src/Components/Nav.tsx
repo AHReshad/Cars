@@ -3,7 +3,7 @@ import React from "react";
 export default function Nav() {
   return (
     <div>
-      <div className="w-full px-[40px] py-[20px] shadow-sm bg-white">
+      <div className="w-full py-5 px-10  shadow-sm bg-white">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           {/* Logo and Brand Name */}
           <div className="flex items-center gap-2">
