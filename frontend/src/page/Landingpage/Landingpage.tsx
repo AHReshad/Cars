@@ -99,9 +99,30 @@ export default function Landingpage() {
           </h1>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="flex gap-[90px]">
-              <img src={car1} alt="" />
-              <img src={car2} alt="" />
-              <img src={car3} alt="" />
+              <div>
+                <img src={car1} alt="" />
+                <h1>1957 Roadster</h1>
+                <p>
+                  Experience the thrill of open-top driving in <br /> this
+                  iconic American classic.
+                </p>
+              </div>
+              <div>
+                <img src={car1} alt="" />
+                <h1>1957 Roadster</h1>
+                <p>
+                  Experience the thrill of open-top driving in <br /> this
+                  iconic American classic.
+                </p>
+              </div>
+              <div>
+                <img src={car1} alt="" />
+                <h1>1957 Roadster</h1>
+                <p>
+                  Experience the thrill of open-top driving in <br /> this
+                  iconic American classic.
+                </p>
+              </div>{" "}
             </div>
           </div>
         </div>
