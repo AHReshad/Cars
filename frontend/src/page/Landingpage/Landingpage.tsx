@@ -4,7 +4,7 @@ import car1 from "/images/landing/car1.svg";
 import car2 from "/images/landing/car2.svg";
 import car3 from "/images/landing/car3.svg";
 import Nav from "../../Components/Nav";
-import Footer from "@/Components/Footer";
+import Footer from "../../Components/Footer.tsx";
 
 // Move teamMembers array outside component to avoid runtime errors
 const teamMembers = [
@@ -55,7 +55,7 @@ const testimonials = [
 export default function Landingpage() {
   return (
     <>
-      <Nav />
+      {/* <Nav /> */}
       <div className="px-4 md:px-[176px]">
         {/* Hero Section */}
         <div className="relative w-full flex justify-center pb-14 mt-[36px]">
@@ -89,14 +89,14 @@ export default function Landingpage() {
 
         <div className="max-w-7xl mx-auto py-8 min-h-screen">
           {/* Search Bar */}
-          <div className="flex items-center bg-[#f5f1ec] text-[#7b4f2c] px-4 py-3 rounded-[12px] w-full max-w-xl mx-auto mb-8">
+          {/* <div className="flex items-center bg-[#f5f1ec] text-[#7b4f2c] px-4 py-3 rounded-[12px] w-full max-w-xl mx-auto mb-8">
             <Search size={20} className="text-[#7b4f2c]" />
             <input
               type="text"
               placeholder="Search for vintage cars or rental options"
               className="bg-transparent outline-none placeholder-[#7b4f2c] w-full text-sm sm:text-base pl-2"
             />
-          </div>
+          </div> */}
 
           <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-8 text-center">
             Our Fleet
@@ -199,7 +199,7 @@ export default function Landingpage() {
           Browse our collection and reserve your dream car for an unforgettable
           experience.
         </p>
-        <div className="flex justify-center mt-8">
+        <div className="flex justify-center mb-[80px] mt-8">
           <button className=" bg-[#CF700F] py-3 px-6 rounded-3xl text-[#FCFAF7] leading-6 tracking-[0px] ">
             Book Your classic Ride today
           </button>

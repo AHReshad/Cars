@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 export default function Nav() {
   return (
@@ -17,11 +17,24 @@ export default function Nav() {
 
           {/* Navigation Menu */}
           <ul className="flex items-center gap-6 text-sm font-medium">
-              <Link to="/" className="cursor-pointer hover:text-blue-600">Home</Link>
-              <Link to="/about" className="cursor-pointer hover:text-blue-600">About Us</Link>
-              <Link to="/services" className="cursor-pointer hover:text-blue-600">Services</Link>
-              <Link to="/contact" className="cursor-pointer hover:text-blue-600">contact</Link>
-
+            <Link to="/" className="cursor-pointer hover:text-blue-600">
+              Home
+            </Link>
+            <Link to="/about" className="cursor-pointer hover:text-blue-600">
+              About Us
+            </Link>
+            <Link to="/services" className="cursor-pointer hover:text-blue-600">
+              Services
+            </Link>
+            <Link
+              to="/contactus"
+              className="cursor-pointer hover:text-blue-600"
+            >
+              contact us
+            </Link>
+            <Link to="/Products" className="cursor-pointer hover:text-blue-600">
+              Products
+            </Link>
 
             {/* Icons */}
             <li>
