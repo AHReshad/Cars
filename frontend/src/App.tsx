@@ -7,6 +7,7 @@ import Landingpage from './page/Landingpage/Landingpage';
 import Aboutus from '../../frontend/src/page/Aboutus/Aboutus.tsx';
 import Services from './page/services/Services.tsx';
 import Create from './page/create-yours/Create.tsx';
+import Notfount from "./page/404/Notfount.tsx";
 
 export default function App() {
   return (
@@ -20,6 +21,8 @@ export default function App() {
         <Route path="/products" element={<Products />} />
         <Route path='/services' element={<Services/>}/>
         <Route path='/create' element={<Create/>}/>
+
+        <Route path="*" element={<Notfount />} />
       </Routes>
     </Router>
   );

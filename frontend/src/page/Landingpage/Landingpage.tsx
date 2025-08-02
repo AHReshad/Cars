@@ -1,9 +1,8 @@
-import { Search, CarFront, Heart, UsersRound } from "lucide-react";
+import {  CarFront, Heart, UsersRound } from "lucide-react";
 import { FaStar } from "react-icons/fa";
 import car1 from "/images/landing/car1.svg";
 import car2 from "/images/landing/car2.svg";
 import car3 from "/images/landing/car3.svg";
-import Nav from "../../Components/Nav";
 import Footer from "../../Components/Footer.tsx";
 
 // Move teamMembers array outside component to avoid runtime errors
