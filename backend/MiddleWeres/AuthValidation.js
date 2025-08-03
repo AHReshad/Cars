@@ -1,0 +1,27 @@
+const joi = require("joi");
+const signupvalidation = (req, res, next) => {
+  const schema = joi.object({
+    name: joi.string().required(),
+    email: joi.string().email().required(),
+    password: joi.string().min(4).max(100).required(),
+  });
+  const { error } = schema.validate(req.body);
+  if (error) {
+    return res.status(400).json({ message: "Bad Request", error });
+  }
+  next();
+};
+
+const loginvalidation = (req, res, next) => {
+  const schema = joi.object({
+    email: joi.string().email().required(),
+    password: joi.string().min(4).max(100).required(),
+  });
+  const { error } = schema.validate(req.body); // this use for check of the form is it true or not schema is a rule
+  if (error) {
+    return res.status(400).json({ message: "Bad Request", error });
+  }
+  next();
+};
+
+module.exports = { signupvalidation, loginvalidation };
