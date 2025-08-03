@@ -13,6 +13,7 @@ export default function footer() {
             <Link className="text-[#99734D] " to={'/product'}>Vehicles</Link>
             <Link className="text-[#99734D] " to={'/about'}>About us</Link>
             <Link className="text-[#99734D] " to={'/contact us'}>contact</Link>
+            <Link className="text-[#99734D] " to={'/Faqs'}>FAQs</Link>
         </div>
         <div className='flex justify-center mt-[24px] gap-[6px]'>
             <Twitter color='#99734D'/>
