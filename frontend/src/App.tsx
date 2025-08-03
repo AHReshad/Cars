@@ -7,6 +7,7 @@ import Aboutus from "../../frontend/src/page/Aboutus/Aboutus.tsx";
 import Services from "./page/services/Services.tsx";
 import Create from "./page/create-yours/Create.tsx";
 import Footer from "./Components/Footer.tsx";
+import { AccordionDemo } from "./page/Faq/Faq.tsx";
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
         <Route path="/products" element={<Products />} />
         <Route path="/services" element={<Services />} />
         <Route path="/create" element={<Create />} />
+        <Route path="/Faq" element={<AccordionDemo />} />
       </Routes>
       {/* <Footer /> */}
     </Router>
