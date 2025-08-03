@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-const mongoUri = 'mongodb+srv://nooriabdurahman084:eJov02VetuI0kDcZ@cluster0.tbrmwhc.mongodb.net/image?retryWrites=true&w=majority';
+const mongoUri = 'mongodb+srv://nooriabdurahman084:znlcOyyKHAGLULNM@cluster0.wj96cca.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
 
 export default async function connect() {
   mongoose.set('strictQuery', true);
@@ -11,3 +11,6 @@ export default async function connect() {
     console.log('MongoDB connection error:', error);
   }
 }
+
+
+znlcOyyKHAGLULNM
