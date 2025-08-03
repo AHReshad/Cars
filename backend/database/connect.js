@@ -12,5 +12,3 @@ export default async function connect() {
   }
 }
 
-
-znlcOyyKHAGLULNM
