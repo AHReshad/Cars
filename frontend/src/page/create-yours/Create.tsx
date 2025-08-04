@@ -8,18 +8,34 @@ interface PostImage {
   name: string;
   description: string;
   company: string;
-  year: number;
-  price: number;
+  year: number | "";       
+  price: number | "";
+  engine: string;
+  horsepower: number | "";
+  seating: number | "";
+  transmission: string;
+  fuelType: string;
+  color: string;
+  availableFrom: string;
+  availableTo: string;
 }
 
-function App() {
+function Create() {
   const [postImage, setPostImage] = useState<PostImage>({
     myFile: "",
     name: "",
     description: "",
     company: "",
-    year: 0,
-    price: 0
+    year: "",
+    price: "",
+    engine: "",
+    horsepower: "",
+    seating: "",
+    transmission: "",
+    fuelType: "",
+    color: "",
+    availableFrom: "",
+    availableTo: ""
   });
 
   const [message, setMessage] = useState("");
@@ -53,12 +69,12 @@ function App() {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-     console.log("🚀 داده‌ی ارسالی به سرور:", postImage);
+    console.log("🚀 داده‌ی ارسالی به سرور:", postImage);
 
-    // ✅ Form validation (all fields required)
+    // Basic validation (you can extend this later)
     const { myFile, name, description, company, year, price } = postImage;
     if (!myFile || !name || !description || !company || !year || !price) {
-      setMessage("❌ Please fill in all fields.");
+      setMessage("❌ Please fill in all required fields.");
       setIsError(true);
       return;
     }
@@ -69,8 +85,16 @@ function App() {
       name: "",
       description: "",
       company: "",
-      year: 0,
-      price: 0
+      year: "",
+      price: "",
+      engine: "",
+      horsepower: "",
+      seating: "",
+      transmission: "",
+      fuelType: "",
+      color: "",
+      availableFrom: "",
+      availableTo: ""
     });
   };
 
@@ -132,7 +156,7 @@ function App() {
             placeholder="e.g. 1967"
             className="border rounded-md p-2 bg-[#f9f3ee]"
             value={postImage.year}
-            onChange={(e) => setPostImage({ ...postImage, year: Number(e.target.value )})}
+            onChange={(e) => setPostImage({ ...postImage, year: Number(e.target.value) })}
           />
         </div>
 
@@ -158,6 +182,102 @@ function App() {
             className="border rounded-md p-2 bg-[#f9f3ee]"
             value={postImage.price}
             onChange={(e) => setPostImage({ ...postImage, price: Number(e.target.value) })}
+          />
+        </div>
+
+        {/* New inputs */}
+
+        {/* Engine */}
+        <div className="flex flex-col">
+          <label className="mb-1 font-medium">Engine:</label>
+          <input
+            type="text"
+            placeholder="e.g., V8"
+            className="border rounded-md p-2 bg-[#f9f3ee]"
+            value={postImage.engine}
+            onChange={(e) => setPostImage({ ...postImage, engine: e.target.value })}
+          />
+        </div>
+
+        {/* Horsepower */}
+        <div className="flex flex-col">
+          <label className="mb-1 font-medium">Horsepower:</label>
+          <input
+            type="number"
+            placeholder="e.g., 450"
+            className="border rounded-md p-2 bg-[#f9f3ee]"
+            value={postImage.horsepower}
+            onChange={(e) => setPostImage({ ...postImage, horsepower: Number(e.target.value) })}
+          />
+        </div>
+
+        {/* Seating */}
+        <div className="flex flex-col">
+          <label className="mb-1 font-medium">Seating Capacity:</label>
+          <input
+            type="number"
+            placeholder="e.g., 4"
+            className="border rounded-md p-2 bg-[#f9f3ee]"
+            value={postImage.seating}
+            onChange={(e) => setPostImage({ ...postImage, seating: Number(e.target.value) })}
+          />
+        </div>
+
+        {/* Transmission */}
+        <div className="flex flex-col">
+          <label className="mb-1 font-medium">Transmission:</label>
+          <input
+            type="text"
+            placeholder="e.g., Manual / Automatic"
+            className="border rounded-md p-2 bg-[#f9f3ee]"
+            value={postImage.transmission}
+            onChange={(e) => setPostImage({ ...postImage, transmission: e.target.value })}
+          />
+        </div>
+
+        {/* Fuel Type */}
+        <div className="flex flex-col">
+          <label className="mb-1 font-medium">Fuel Type:</label>
+          <input
+            type="text"
+            placeholder="e.g., Petrol / Diesel / Electric"
+            className="border rounded-md p-2 bg-[#f9f3ee]"
+            value={postImage.fuelType}
+            onChange={(e) => setPostImage({ ...postImage, fuelType: e.target.value })}
+          />
+        </div>
+
+        {/* Color */}
+        <div className="flex flex-col">
+          <label className="mb-1 font-medium">Color:</label>
+          <input
+            type="text"
+            placeholder="e.g., Red"
+            className="border rounded-md p-2 bg-[#f9f3ee]"
+            value={postImage.color}
+            onChange={(e) => setPostImage({ ...postImage, color: e.target.value })}
+          />
+        </div>
+
+        {/* Available From */}
+        <div className="flex flex-col">
+          <label className="mb-1 font-medium">Available From:</label>
+          <input
+            type="date"
+            className="border rounded-md p-2 bg-[#f9f3ee]"
+            value={postImage.availableFrom}
+            onChange={(e) => setPostImage({ ...postImage, availableFrom: e.target.value })}
+          />
+        </div>
+
+        {/* Available To */}
+        <div className="flex flex-col">
+          <label className="mb-1 font-medium">Available To:</label>
+          <input
+            type="date"
+            className="border rounded-md p-2 bg-[#f9f3ee]"
+            value={postImage.availableTo}
+            onChange={(e) => setPostImage({ ...postImage, availableTo: e.target.value })}
           />
         </div>
 
@@ -201,13 +321,20 @@ function App() {
   );
 }
 
-export default App;
-
+// Convert file to Base64
 function convertToBase64(file: File): Promise<string> {
   return new Promise((resolve, reject) => {
-    const fileReader = new FileReader();
-    fileReader.readAsDataURL(file);
-    fileReader.onload = () => resolve(fileReader.result as string);
-    fileReader.onerror = (error) => reject(error);
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => {
+      if (typeof reader.result === "string") {
+        resolve(reader.result);
+      } else {
+        reject(new Error("FileReader result is not a string"));
+      }
+    };
+    reader.onerror = (error) => reject(error);
   });
 }
+
+export default Create;
