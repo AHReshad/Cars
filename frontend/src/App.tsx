@@ -28,7 +28,7 @@ export default function App() {
         <Route path="/create" element={<Create />} />
         <Route path="/Faq" element={<AccordionDemo />} />
         <Route path="/Login" element={<Login />} />
-        <Route path="/Signup" element={<Signup />} />
+        <Route path="/signup" element={<Signup />} />
       </Routes>
       {/* <Footer /> */}
     </Router>

@@ -1,98 +1,80 @@
-import React, { useState, type ChangeEvent, type FormEvent } from "react";
-import axios from "axios";
-import { useNavigate, Link } from "react-router-dom";
+// src/pages/Signup.tsx
 
-interface SignupForm {
-  name: string;
-  email: string;
-  password: string;
-}
+import React from "react";
+import { Link } from "react-router-dom";
 
 const Signup: React.FC = () => {
-  const [form, setForm] = useState<SignupForm>({
-    name: "",
-    email: "",
-    password: "",
-  });
-
-  const [error, setError] = useState<string>("");
-  const [loading, setLoading] = useState<boolean>(false);
-  const navigate = useNavigate();
-
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setError("");
-    setLoading(true);
-
-    try {
-      await axios.post(`${import.meta.env.VITE_API_URL}/signup`, form);
-      navigate("/login");
-    } catch (err: any) {
-      setError(err.response?.data?.message || "Signup failed");
-    } finally {
-      setLoading(false);
-    }
-  };
-
   return (
-    <div className="flex items-center justify-center min-h-screen bg-[#fefcf9] px-4">
-      <form
-        onSubmit={handleSubmit}
-        className="w-full max-w-md space-y-6 bg-white p-8 rounded-lg shadow-md"
-      >
-        <h1 className="text-2xl font-bold text-center text-[#333]">Sign Up</h1>
+    <div className="min-h-screen flex items-center justify-center bg-[#fefcf9] px-4">
+      <div className="w-full max-w-md">
+        <h2 className="text-center text-2xl font-semibold text-[#2a1c0f] mb-8">
+          Create an account
+        </h2>
 
-        <input
-          name="name"
-          type="text"
-          placeholder="Full Name"
-          value={form.name}
-          onChange={handleChange}
-          required
-          className="w-full px-4 py-2 border border-[#e9ddd2] rounded-md placeholder-[#c39b76] focus:outline-none focus:ring-2 focus:ring-[#d4b29c]"
-        />
+        <form className="space-y-6">
+          <div>
+            <label
+              htmlFor="name"
+              className="block text-sm font-medium text-[#2a1c0f]"
+            >
+              Name
+            </label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Enter your name"
+              className="mt-1 w-full px-4 py-2 border border-[#eadcd1] rounded-md placeholder-[#a16d3e] focus:outline-none focus:ring-2 focus:ring-[#d47312]"
+            />
+          </div>
 
-        <input
-          name="email"
-          type="email"
-          placeholder="Email"
-          value={form.email}
-          onChange={handleChange}
-          required
-          className="w-full px-4 py-2 border border-[#e9ddd2] rounded-md placeholder-[#c39b76] focus:outline-none focus:ring-2 focus:ring-[#d4b29c]"
-        />
+          <div>
+            <label
+              htmlFor="email"
+              className="block text-sm font-medium text-[#2a1c0f]"
+            >
+              Email
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter your email"
+              className="mt-1 w-full px-4 py-2 border border-[#eadcd1] rounded-md placeholder-[#a16d3e] focus:outline-none focus:ring-2 focus:ring-[#d47312]"
+            />
+          </div>
 
-        <input
-          name="password"
-          type="password"
-          placeholder="Password"
-          value={form.password}
-          onChange={handleChange}
-          required
-          className="w-full px-4 py-2 border border-[#e9ddd2] rounded-md placeholder-[#c39b76] focus:outline-none focus:ring-2 focus:ring-[#d4b29c]"
-        />
+          <div>
+            <label
+              htmlFor="password"
+              className="block text-sm font-medium text-[#2a1c0f]"
+            >
+              Password
+            </label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Create a password"
+              className="mt-1 w-full px-4 py-2 border border-[#eadcd1] rounded-md placeholder-[#a16d3e] focus:outline-none focus:ring-2 focus:ring-[#d47312]"
+            />
+          </div>
 
-        {error && <p className="text-red-600 text-sm">{error}</p>}
+          <button
+            type="submit"
+            className="w-full bg-[#d47312] hover:bg-[#c16410] text-white py-2 rounded-md font-semibold transition"
+          >
+            Sign up
+          </button>
+        </form>
 
-        <button
-          type="submit"
-          disabled={loading}
-          className="w-full py-2 bg-[#D47312] text-white rounded-md hover:bg-[#c76710] transition"
-        >
-          {loading ? "Signing up..." : "Sign Up"}
-        </button>
-
-        <p className="text-center text-sm text-[#99734D]">
+        <p className="text-center text-sm text-[#7d5b41] mt-6">
           Already have an account?{" "}
-          <Link to="/login" className="underline hover:text-[#D47312]">
-            Login
+          <Link to="/login" className="font-medium hover:underline">
+            Log in
           </Link>
         </p>
-      </form>
+      </div>
     </div>
   );
 };
